@@ -1,7 +1,7 @@
 <?php 
 /**
 *
-* @package wordpressCohortplugin
+* @package employeesplugin
 */
 
 namespace Inc\Base;

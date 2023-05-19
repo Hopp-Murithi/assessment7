@@ -5,13 +5,13 @@
 
     <form method="post">
 
-        <h1>Add Cohort member</h1>
+        <h1>Add employee</h1>
         <?php
 
 global $success_msg;
 
 if ($success_msg) {
-    echo "<p id='message'>Cohort member has been added successfully</p>";
+    echo "<p id='message'>Employee has been added successfully</p>";
 
     echo '<script> document.getElementById("message").style.display = "flex"; </script>';
 
@@ -35,19 +35,23 @@ if ($success_msg) {
             <input type="number" name="phone" id='phone' required />
         </div>
         <div>
-            <label for="age">Age</label>
-            <input type="number" name="age" id='age' required />
+            <label for="department">Department</label>
+            <input type="text" name="department" id='department' required />
         </div>
-        <input type="submit" name='submit'>
+        <input type="submit" name='submit' value="Add">
         
     </form>
 </div>
 </div>
 <style>
+    @import url('https://fonts.googleapis.com/css?family=PT+Serif+Caption:400');
+
+html {font-size: 100%;}
     body {
         font-size: 16px;
+        font-family: 'PT Serif Caption', serif;
         line-height: 1.5;
-        background: radial-gradient(#0B20D8, #ffffff) no-repeat center center fixed;
+        background: radial-gradient(#EE0A0A, #ffffff) no-repeat center center fixed;
     }
 
     .container {
@@ -62,7 +66,7 @@ if ($success_msg) {
 
     label {
         display: block;
-        color: black;
+        color: white;
         margin-bottom: 10px;
         font-family: "Roboto Mono", monospace;
         font-size: 18px;
@@ -78,8 +82,8 @@ if ($success_msg) {
     }
 
     input[type="submit"] {
-        background-color: #040404;
-        color: white;
+        background-color: #040404;width: 100%;
+        color: white;font-weight:600;
         margin-top: 20px;
         padding: 10px 20px;
         border: none;
@@ -88,7 +92,7 @@ if ($success_msg) {
     }
 
     input[type="submit"]:hover {
-        background-color: #040404;
+        background-color: #EE0A0A;color:white;
     }
 
     #message {
@@ -97,6 +101,6 @@ if ($success_msg) {
     border-radius: 5px;
     padding:4px;
     font-size: 20px;
-    font-weight: 400;
+    font-weight: 600;
     }
 </style>

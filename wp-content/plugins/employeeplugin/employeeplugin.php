@@ -1,13 +1,13 @@
 <?php
 
 /**
- * @package wordpressCohortplugin
+ * @package employeesplugin
  */
 
 /**
- *Plugin Name: wordpressCohort
+ *Plugin Name: employees plugin
  Plugin URI: http://...	
- Description: This is a plugin built to help add and view members of wordpress cohort
+ Description: This is a plugin built to help add and view employees using wpdb
  version: 1.0.0
  Author: Hope Murithi
  Author URI: https://hope-murithi.netlify.app/
@@ -28,20 +28,20 @@ if (file_exists(dirname(__FILE__) . '/vendor/autoload.php')) {
 use Inc\Base;
 
 //activate plugin
-function activate_wordpresscohort_plugin()
+function activate_employee_plugin()
 {
    Base\Activate::activate();
 }
 
 //deactivate plugin
-function deactivate_wordpressCohort_plugin()
+function deactivate_employee_plugin()
 {
     Base\Deactivate::deactivate();
 }
 
-register_activation_hook(__FILE__, 'activate_wordpressCohort_plugin');
+register_activation_hook(__FILE__, 'activate_employee_plugin');
 
-register_deactivation_hook(__FILE__, 'deactivate_wordpressCohort_plugin');
+register_deactivation_hook(__FILE__, 'deactivate_employee_plugin');
 
 
 // to add the plugin services

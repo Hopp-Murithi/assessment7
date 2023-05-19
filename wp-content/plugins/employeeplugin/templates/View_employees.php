@@ -1,31 +1,33 @@
 <?php
 global $wpdb;
 
-$members = $wpdb->get_results("SELECT * FROM a5_members");
+$employees = $wpdb->get_results("SELECT * FROM wp_employees");
 ?>
 
-<h1>All cohort members</h1>
+<h1>Employees list</h1>
 <div class="container">
 
     <table>
         <tr>
+            <th>Employee ID</th>
             <th>Name</th>
             <th>Email</th>
             <th>Phone Number</th>
-            <th>Age</th>
+            <th>Department</th>
 
         </tr>
 
 
         <?php
-        for ($i = 0; $i < count($members); $i++) {
+        for ($i = 0; $i < count($employees); $i++) {
         ?>
 
             <tr>
-                <td><?php echo $members[$i]->name ?></td>
-                <td><?php echo $members[$i]->email ?></td>
-                <td><?php echo $members[$i]->phone ?></td>
-                <td><?php echo $members[$i]->age ?></td>
+                <td><?php echo $employees[$i]->id ?></td>
+                <td><?php echo $employees[$i]->name ?></td>
+                <td><?php echo $employees[$i]->email ?></td>
+                <td><?php echo $employees[$i]->phone ?></td>
+                <td><?php echo $employees[$i]->department ?></td>
             </tr>
         <?php
         }
@@ -36,10 +38,17 @@ $members = $wpdb->get_results("SELECT * FROM a5_members");
 
 </div>
 <style>
+    @import url('https://fonts.googleapis.com/css?family=PT+Serif+Caption:400');
+
+    html {
+        font-size: 100%;
+    }
+
     body {
         font-size: 16px;
+        font-family: 'PT Serif Caption', serif;
         line-height: 1.5;
-        background: radial-gradient(#0B20D8, #ffffff) no-repeat center center fixed;
+        background: radial-gradient(#EE0A0A, #ffffff) no-repeat center center fixed;
     }
 
     .container {

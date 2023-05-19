@@ -1,52 +1,52 @@
 <?php
 
 /**
- * @package ClassManager
+ * @package employeesplugin
  */
 
 namespace Inc\Pages;
 
-class RegisterMember
+class RegisterEmployee
 {
     public function register()
     {
-        $this->create_members_table();
-        $this->add_new_member();
+        $this->create_employees_table();
+        $this->add_new_employee();
     }
 
-    function create_members_table()
+    function create_employees_table()
     {
         global $wpdb;
 
-        $table_name = $wpdb->prefix . 'members';
+        $table_name = $wpdb->prefix . 'employees';
 
         $query = "CREATE TABLE IF NOT EXISTS " . $table_name . "(
             id int AUTO_INCREMENT PRIMARY KEY, 
             name text NOT NULL,
              phone text NOT NULL,
              email text NOT NULL,
-             age int NOT NULL
+             department text NOT NULL
          );";
 
         require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
         dbDelta($query);
     }
 
-    function add_new_member()
+    function add_new_employee()
     {
         if (isset($_POST['submit'])) {
             $data = [
                 'name' => $_POST['name'],
                 'phone' => $_POST['phone'],
                 'email' => $_POST['email'],
-                'age' => $_POST['age'],
+                'department' => $_POST['department'],
             
             ];
 
             global $wpdb;
 
 
-            $table_name = $wpdb->prefix . 'members';
+            $table_name = $wpdb->prefix . 'employees';
             $results = $wpdb->insert($table_name, $data);
 
 

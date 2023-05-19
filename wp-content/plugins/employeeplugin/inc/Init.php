@@ -2,7 +2,7 @@
 
 /**
  * 
- * @package wordpressCohortplugin
+ * @package employeesplugin
  */
 
 namespace Inc;
@@ -13,7 +13,7 @@ class Init
     {
         return [
             Pages\Admin::class,
-            Pages\RegisterMember::class
+            Pages\RegisterEmployee::class
         ];
     }
 
