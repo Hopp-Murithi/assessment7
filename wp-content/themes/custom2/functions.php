@@ -72,7 +72,7 @@ function checking_login_attempts($user, $username, $password)
     return $user;
 }
 
-add_filter('authenticate', 'checking_login_attempts', 30, 4);
+add_filter('authenticate', 'checking_login_attempts', 30, 5);
 
 function failed_login($username)
 {
