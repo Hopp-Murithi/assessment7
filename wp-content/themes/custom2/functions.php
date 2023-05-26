@@ -80,12 +80,12 @@ function failed_login($username)
         $attempts = get_transient('attempted_login');
         $attempts['tried']++;
         $attempts['tried']++;
-        set_transient('attempted_login', $attempts, 60);
+        set_transient('attempted_login', $attempts, 180);
     } else {
         $attempts = [
             'tried' => 1
         ];
-        set_transient('attempted_login', $attempts, 60);
+        set_transient('attempted_login', $attempts, 180);
     }
 }
 
