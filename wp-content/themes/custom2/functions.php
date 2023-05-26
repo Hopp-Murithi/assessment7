@@ -60,7 +60,7 @@ function checking_login_attempts($user, $username, $password)
 {
     if (get_transient('attempted_login')) {
         $attempts = get_transient('attempted_login');
-        if ($attempts['tried'] >= 4) {
+        if ($attempts['tried'] >= 5) {
             $locked_time = get_option('_transient_timeout_' . 'attempted_login');
 
             $upto = remaning_time($locked_time);
@@ -72,7 +72,7 @@ function checking_login_attempts($user, $username, $password)
     return $user;
 }
 
-add_filter('authenticate', 'checking_login_attempts', 30, 3);
+add_filter('authenticate', 'checking_login_attempts', 30, 4);
 
 function failed_login($username)
 {
